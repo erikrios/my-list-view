@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
     tools:viewBindingIgnore="true">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_photo"
-        android:layout_width="100dp"
-        android:layout_height="150dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:contentDescription="@string/hero_photo"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"
+        app:civ_border_color="#FF909090"
+        app:civ_border_width="2dp" />
 
     <TextView
         android:id="@+id/tv_name"
