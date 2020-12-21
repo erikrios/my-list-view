@@ -5,9 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.TextView
-import de.hdodenhof.circleimageview.CircleImageView
 import io.erikrios.github.mylistview.R
+import io.erikrios.github.mylistview.databinding.ItemHeroBinding
 import io.erikrios.github.mylistview.models.Hero
 
 class HeroAdapter internal constructor(private val context: Context) : BaseAdapter() {
@@ -32,14 +31,12 @@ class HeroAdapter internal constructor(private val context: Context) : BaseAdapt
     }
 
     private inner class ViewHolder internal constructor(view: View) {
-        private val tvName: TextView = view.findViewById(R.id.tv_name)
-        private val tvDescription: TextView = view.findViewById(R.id.tv_description)
-        private val imgPhoto: CircleImageView = view.findViewById(R.id.img_photo)
+        private val binding = ItemHeroBinding.bind(view)
 
         internal fun bind(hero: Hero) {
-            tvName.text = hero.name
-            tvDescription.text = hero.description
-            imgPhoto.setImageResource(hero.photo)
+            binding.tvName.text = hero.name
+            binding.tvDescription.text = hero.description
+            binding.imgPhoto.setImageResource(hero.photo)
         }
     }
 }
